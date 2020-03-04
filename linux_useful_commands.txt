@@ -1,1 +1,53 @@
-Hi 
+Commands
+=========
+
+mkdir directory_name ---> craete a directory
+cd directory_name  -----> switch to DIRECTORY
+cat file-name ---> contents of file
+touch filename ---> create a empty file(NOTE: touch command for the same file will modify only modified time not contents)
+vi filename --> to edit a file
+passwd username --> to hange password for the user
+su username ---> to switch user
+su - username ---> to switch user with all the .profile and env changes.
+ls -lart ---> to view all the files in a directory including hidden files
+ls -id ----> to view the permissions of all the files
+cp -p source_path dest_path ---> to copy a file with same permissions
+cp -rp source_path dest_path ---> to copy a all the files recursively from a folder with same permissions.
+cat .bash_rc ----> to view the shell features
+uptime ---> to view the uptime of the server.
+du -sk . --> to view the pwd disk usage in kb
+du -h ----> to view the disk usage od the pwd.
+du -sm . ---> to view the pwd disk usage in mb
+cat /etc/shadow ---> stores all users password in a encrypted way.
+df -h . ---> view file system
+mkfs.ext4 disk_attached ---> will craete a file system for the disk attached to the machine
+chown -R user:group file or folder  ---->changing owner for a file 
+fsck dev/sda 2 --> to check file system condition and repair.
+
+umask values
+=============
+0   000 7  RWX 
+1   001 6  RW-
+2   010 5  R-X
+3   011 4  R--
+4   100 3  -WX 
+5   101 2  -W-
+6   110 1  --X
+7   111 0  ---
+
+Partitioning
+=============
+
+df -T ---> to view the list of filesystems using disk space.
+sudo parted -l ---> to view the partition od disks
+sudo parted --> to launch parted to make partition
+select dev/sda2 ---> to select the disk which we going to partition
+mkpart primary 123 4567 ---> to do partition of the selected disk primary is the partition type and other two are starting and ending storage in mb.
+resize 1 234 4567 ---> resizing the partition 2 is the partition number .
+
+Swap Space
+=========
+
+mkswap dev/sda2 ---> to intialize swap areas
+swapon dev/sda2 ---> will enable swap.
+swapoff dev/sda2 --> to disable swap space.
